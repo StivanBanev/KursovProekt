@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавяне на студент</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Добавяне на нов студент</h1>
+
+    <form id="studentForm">
+        <label>Име:</label>
+        <input type="text" id="firstName" required>
+
+        <label>Презиме:</label>
+        <input type="text" id="middleName" required>
+
+        <label>Фамилия:</label>
+        <input type="text" id="lastName" required>
+
+        <label>Дата на раждане:</label>
+        <input type="date" id="birthDate" required>
+        <span id="ageDisplay"></span>
+
+        <label>Град:</label>
+        <input type="text" id="city" required>
+
+        <label>Текущ адрес:</label>
+        <input type="text" id="address" required>
+
+        <label>ЕГН:</label>
+        <input type="text" id="egn" required>
+
+        <label>Телефон:</label>
+        <input type="tel" id="phone" required>
+
+        <label>Имейл:</label>
+        <input type="email" id="email" required>
+
+        <button type="submit">Запази студент</button>
+    </form>
+
+    <script src="add-student.js"></script>
+</body>
+</html>
