@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Student - RegistraX</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Лого -->
+  <img src="logo.png" alt="RegistraX Logo" class="logo"/>
+
+  <h1>Search Students</h1>
+  <div id="searchControls">
+    <label>Filter:
+      <select id="searchFilter">
+        <option value="name">Name</option>
+        <option value="egn">EGN</option>
+        <option value="facultyNumber">Faculty Number</option>
+        <option value="phone">Phone</option>
+      </select>
+    </label>
+    <input type="text" id="searchInput" placeholder="Enter value">
+    <button id="searchBtn">Search</button>
+  </div>
+  <div id="resultsContainer"></div>
+      <!-- Help бутон -->
+      <button class="help-btn" id="helpBtn">Help</button>
+
+      <!-- Help модал -->
+      <div id="helpModal">
+        <div class="modal-content">
+          <p>
+            For assistance, please call:<br/>
+            <strong>089 123 4567</strong><br/>
+            or email:<br/>
+            <strong>RegistraX@registrax.com</strong>
+          </p>
+          <button id="helpOk">OK</button>
+        </div>
+      </div>
+    
+  <script src="search-student.js"></script>
+</body>
+</html>

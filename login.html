@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - RegistraX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Лого -->
+  <img src="logo.png" alt="RegistraX Logo" class="logo"/>
+
+  <h1>Login to RegistraX</h1>
+  <form id="loginForm">
+    <label>Username:
+      <input type="text" id="username" required>
+    </label>
+    <label>Password:
+      <input type="password" id="password" required>
+    </label>
+    <button type="submit">Login</button>
+  </form>
+      <!-- Help бутон -->
+      <button class="help-btn" id="helpBtn">Help</button>
+
+      <!-- Help модал -->
+      <div id="helpModal">
+        <div class="modal-content">
+          <p>
+            For assistance, please call:<br/>
+            <strong>089 123 4567</strong><br/>
+            or email:<br/>
+            <strong>RegistraX@registrax.com</strong>
+          </p>
+          <button id="helpOk">OK</button>
+        </div>
+      </div>
+    
+  <script src="login.js"></script>
+</body>
+</html>

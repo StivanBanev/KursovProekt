@@ -1,7 +1,10 @@
-document.getElementById('addStudentBtn').addEventListener('click', function() {
-    window.location.href = 'add-student.html'; // Отваря страницата за добавяне на студент
-});
-
-document.getElementById('searchStudentBtn').addEventListener('click', function() {
-    window.location.href = 'search-student.html'; // Страница за търсене на студент (ще направим после)
-});
+// menu.js
+// Ако не е логнато, редирект към login
+if (localStorage.getItem('loggedIn') !== 'true') {
+    window.location.href = 'login.html';
+  }
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    localStorage.removeItem('loggedIn');
+    window.location.href = 'login.html';
+  });
+  

@@ -1,18 +1,226 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Студентски Регистър - Начално Меню</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RegistraX</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      height: 100vh;
+      position: relative;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    .logout-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color .2s;
+    }
+    .logout-btn:hover {
+      background-color: #c82333;
+    }
+    .title {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      font-size: 3rem;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      max-height: 60px;
+    }
+    .button-container {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+    .nav-btn {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color .2s, transform .1s;
+    }
+    .nav-btn:hover {
+      background-color: #c82333;
+      transform: translateY(-2px);
+    }
+
+    /* === НОВА СЕКЦИЯ: новини === */
+    .news-section {
+      position: absolute;
+      top: 180px;              /* под бутоните */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 800px;
+    }
+    .news-section h2 {
+      margin: 0 0 16px;
+      text-align: center;
+      font-size: 1.5rem;
+      color: #ECECEC;
+    }
+    .news-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    .news-card {
+      background: #1E1E1E;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      width: 240px;
+    }
+    .news-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .news-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    /* Help бутон */
+.help-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color .2s, transform .1s;
+  z-index: 1000;
+}
+.help-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Модален прозорец за Help */
+#helpModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+#helpModal .modal-content {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  width: 400px;
+  color: #fff;
+  text-align: center;
+}
+#helpModal .modal-content p {
+  margin: 0 0 20px;
+}
+#helpModal .modal-content button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color .2s;
+}
+#helpModal .modal-content button:hover {
+  background-color: #c82333;
+}
+
+  </style>
 </head>
 <body>
-    <h1>Добре дошли в Студентския Регистър</h1>
+  <button class="logout-btn" onclick="location='login.html'">Logout</button>
+  <h1 class="title">RegistraX</h1>
+  <img src="logo.png" alt="RegistraX Logo" class="logo"/>
+  <div class="button-container">
+    <button class="nav-btn" onclick="location='add-student.html'">Add Student</button>
+    <button class="nav-btn" onclick="location='search-student.html'">Search Student</button>
+  </div>
 
-    <div id="menu">
-        <button id="addStudentBtn">➕ Добавяне на студент</button>
-        <button id="searchStudentBtn">🔍 Търсене на студент</button>
+  <!-- Новини -->
+  <section class="news-section">
+    <h2>University & School News</h2>
+    <div class="news-container">
+      <div class="news-card">
+        <h3>Enrollment 2025 Opens</h3>
+        <p>Applications for Fall 2025 at Sofia University are now open. Deadline: June 30.</p>
+      </div>
+      <div class="news-card">
+        <h3>Scholarship Announcement</h3>
+        <p>New STEM scholarships available for top-ranking high school graduates.</p>
+      </div>
+      <div class="news-card">
+        <h3>Open Day Event</h3>
+        <p>Technical University hosts virtual open day on May 15. Register online!</p>
+      </div>
     </div>
+  </section>
+    <!-- Help бутон -->
+    <button class="help-btn" id="helpBtn">Help</button>
 
-    <script src="menu.js"></script> <!-- Тук зареждаме външен JavaScript -->
+    <!-- Help модал -->
+    <div id="helpModal">
+      <div class="modal-content">
+        <p>
+          For assistance, please call:<br/>
+          <strong>089 123 4567</strong><br/>
+          or email:<br/>
+          <strong>RegistraX@registrax.com</strong>
+        </p>
+        <button id="helpOk">OK</button>
+      </div>
+    </div>
+  
+  <script>
+    document.getElementById('helpBtn').addEventListener('click', () => {
+      document.getElementById('helpModal').style.display = 'flex';
+    });
+    document.getElementById('helpOk').addEventListener('click', () => {
+      document.getElementById('helpModal').style.display = 'none';
+    });
+    // Затваряме при клик извън съдържанието
+    document.getElementById('helpModal').addEventListener('click', e => {
+      if (e.target.id === 'helpModal') {
+        document.getElementById('helpModal').style.display = 'none';
+      }
+    });
+  </script>
+  
 </body>
 </html>

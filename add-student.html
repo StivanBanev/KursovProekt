@@ -1,45 +1,74 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Добавяне на студент</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Student - RegistraX</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <h1>Добавяне на нов студент</h1>
+  <!-- Лого -->
+  <img src="logo.png" alt="RegistraX Logo" class="logo"/>
+  <h1>Add New Student</h1>
 
-    <form id="studentForm">
-        <label>Име:</label>
-        <input type="text" id="firstName" required>
-
-        <label>Презиме:</label>
-        <input type="text" id="middleName" required>
-
-        <label>Фамилия:</label>
-        <input type="text" id="lastName" required>
-
-        <label>Дата на раждане:</label>
-        <input type="date" id="birthDate" required>
-        <span id="ageDisplay"></span>
-
-        <label>Град:</label>
-        <input type="text" id="city" required>
-
-        <label>Текущ адрес:</label>
-        <input type="text" id="address" required>
-
-        <label>ЕГН:</label>
-        <input type="text" id="egn" required>
-
-        <label>Телефон:</label>
-        <input type="tel" id="phone" required>
-
-        <label>Имейл:</label>
-        <input type="email" id="email" required>
-
-        <button type="submit">Запази студент</button>
+  <div class="add-container">
+    <!-- Лява колона: формата -->
+    <form id="addForm">
+      <label>First Name: <input id="firstName" type="text" required></label>
+      <label>Middle Name: <input id="middleName" type="text"></label>
+      <label>Last Name: <input id="lastName" type="text" required></label>
+      <label>Faculty Number: <input id="facNumber" type="text" required></label>
+      <label>Birth Date: <input id="birthDate" type="date" required></label>
+      <span id="ageDisplay"></span>
+      <label>City: <input id="city" type="text"></label>
+      <label>Address: <input id="address" type="text"></label>
+      <label>EGN: <input id="egn" type="text" required></label>
+      <label>Phone: <input id="phone" type="text"></label>
+      <label>Email: <input id="email" type="email"></label>
+      <label>Specialty: <input id="specialty" type="text"></label>
+      <label>Course: <input id="course" type="number" min="1"></label>
+      <label>Group: <input id="group" type="text"></label>
+      <button type="submit">Add Student</button>
     </form>
 
-    <script src="add-student.js"></script>
+    <!-- Дясна колона: preview таблица -->
+    <div id="previewContainer">
+      <h2>Live Preview</h2>
+      <table>
+        <tr><th>First Name</th><td id="previewFirstName"></td></tr>
+        <tr><th>Middle Name</th><td id="previewMiddleName"></td></tr>
+        <tr><th>Last Name</th><td id="previewLastName"></td></tr>
+        <tr><th>Faculty Number</th><td id="previewFacNumber"></td></tr>
+        <tr><th>Birth Date</th><td id="previewBirthDate"></td></tr>
+        <tr><th>Age</th><td id="previewAge"></td></tr>
+        <tr><th>City</th><td id="previewCity"></td></tr>
+        <tr><th>Address</th><td id="previewAddress"></td></tr>
+        <tr><th>EGN</th><td id="previewEGN"></td></tr>
+        <tr><th>Phone</th><td id="previewPhone"></td></tr>
+        <tr><th>Email</th><td id="previewEmail"></td></tr>
+        <tr><th>Specialty</th><td id="previewSpecialty"></td></tr>
+        <tr><th>Course</th><td id="previewCourse"></td></tr>
+        <tr><th>Group</th><td id="previewGroup"></td></tr>
+      </table>
+    </div>
+  </div>
+      <!-- Help бутон -->
+      <button class="help-btn" id="helpBtn">Help</button>
+
+      <!-- Help модал -->
+      <div id="helpModal">
+        <div class="modal-content">
+          <p>
+            For assistance, please call:<br/>
+            <strong>089 123 4567</strong><br/>
+            or email:<br/>
+            <strong>RegistraX@registrax.com</strong>
+          </p>
+          <button id="helpOk">OK</button>
+        </div>
+      </div>
+    
+
+  <script src="add-student.js"></script>
 </body>
 </html>

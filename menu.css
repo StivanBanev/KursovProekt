@@ -1,0 +1,77 @@
+/* menu.css */
+
+/* --- фон и контейнер --- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;   /* черен фон */
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* --- Header като grid --- */
+  .header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  /* Logout бутон в ляво */
+  .logout-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    justify-self: start;            /* изпраща го в най-ляво */
+    transition: background-color .2s;
+  }
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Заглавие по средата */
+  .title {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+    justify-self: center;           /* центрира се в средната колона */
+  }
+  
+  /* Лого вдясно */
+  .logo {
+    max-height: 60px;
+    justify-self: end;              /* изпраща го в най-дясно */
+  }
+  
+  /* --- Бутони под хедъра --- */
+  .button-container {
+    display: flex;
+    justify-content: center;        /* центрира хоризонтално */
+    gap: 40px;                       /* разстояние между бутоните */
+    margin-top: 60px;
+  }
+  
+  .nav-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background-color .2s, transform .1s;
+  }
+  .nav-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+  }
+  

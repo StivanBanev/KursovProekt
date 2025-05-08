@@ -1,0 +1,330 @@
+/* Общи стилове */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-height: 60px;
+  }
+  
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  /* Форми и контроли */
+  form, #searchControls {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin: 8px 0;
+    color: #ffffff;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"],
+  select {
+    margin-left: 8px;
+    padding: 6px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+  
+  button {
+    margin-left: 8px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+  
+  /* Специално за резултатите при добавяне */
+  #addResult {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  /* Контейнер за резултатите: флекс, 3 карти на ред */
+  #resultsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+  
+  /* Карта на студент */
+  .student-entry {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
+  
+  /* Таблица вътре в картата (vertical) */
+  .student-entry table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+  }
+  
+  .student-entry th,
+  .student-entry td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .student-entry th {
+    width: 40%;
+    font-weight: 600;
+    background: #333;
+    border-bottom: 1px solid #555;
+    color: #ffffff;
+  }
+  
+  .student-entry td {
+    border-bottom: 1px solid #555;
+    color: #ffffff;
+  }
+  
+  /* Бутоните */
+  .student-entry .actions {
+    text-align: center;
+    margin-top: 12px;
+  }
+  
+  /* Червен Edit/Save с бели букви */
+  .student-entry .actions .edit-btn {
+    background: #dc3545;
+    color: #ffffff;
+  }
+  
+  /* Сив Delete с бели букви */
+  .student-entry .actions .delete-btn {
+    background: #6c757d;
+    color: #ffffff;
+  }
+  
+  .student-entry .actions button {
+    margin: 0 6px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Модални прозорци */
+  #alertModal,
+  #confirmModal {
+    font-family: Arial, sans-serif;
+  }
+  
+  #alertModal div,
+  #confirmModal div {
+    background: #2a2a2a !important;
+    color: #ffffff !important;
+  }
+  
+  /* OK бутон в алерт */
+  #alertOk {
+    background: #dc3545 !important;
+    color: #ffffff !important;
+  }
+  
+  /* Yes бутон в confirm */
+  #modalYes {
+    background: #dc3545 !important;
+    color: #ffffff !important;
+  }
+  
+  /* No бутон остава сив */
+  #modalNo {
+    background: #6c757d !important;
+    color: #ffffff !important;
+  }
+  
+  /* Мобилна визия: по 1 карта на ред */
+  @media (max-width: 600px) {
+    .student-entry {
+      flex: 1 1 100%;
+    }
+  }
+/* Контейнер за форма + preview */
+.add-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  
+  /* Формата и preview да поемат по равно */
+  .add-container form,
+  .add-container #previewContainer {
+    flex: 1;
+  }
+  
+  /* Под mobile: една под друга */
+  @media (max-width: 800px) {
+    .add-container {
+      flex-direction: column;
+    }
+  }
+    
+
+  /* Стил на preview таблицата, аналогичен на картите в търсенето */
+#previewContainer table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    margin-top: 12px;
+  }
+  
+  #previewContainer th,
+  #previewContainer td {
+    padding: 8px 12px;
+    text-align: left;
+    color: #ffffff;
+  }
+  
+  #previewContainer th {
+    background: #333;
+    font-weight: 600;
+    border-bottom: 1px solid #555;
+  }
+  
+  #previewContainer td {
+    border-bottom: 1px solid #555;
+  }
+  
+  /* Ако искаш да отделиш редовете */
+  #previewContainer tbody tr + tr td {
+    border-top: 1px solid #555;
+  }
+  /* История – схож стил с cards */
+.history-entry {
+  width: 100%;
+  border-collapse: collapse;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  margin: 12px 0;
+}
+.history-entry th,
+.history-entry td {
+  padding: 8px 12px;
+  color: #fff;
+  border-bottom: 1px solid #555;
+}
+.history-entry th {
+  background: #333;
+  text-align: left;
+}
+#a historySection #moreBtn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* Модал */
+.modal {
+  display: none;
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.7);
+  align-items:center; justify-content:center;
+  z-index:1000;
+}
+.modal-content {
+  background: #2a2a2a;
+  padding:20px;
+  border-radius:8px;
+  width: 90%; max-width: 600px;
+  color: #fff;
+}
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.help-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color .2s, transform .1s;
+  z-index: 1000;
+}
+.help-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+/* Модален прозорец за Help */
+#helpModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+#helpModal .modal-content {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  width: 400px;
+  color: #fff;
+  text-align: center;
+}
+#helpModal .modal-content p {
+  margin: 0 0 20px;
+}
+#helpModal .modal-content button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color .2s;
+}
+#helpModal .modal-content button:hover {
+  background-color: #c82333;
+}
